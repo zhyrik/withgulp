@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /less/
+Disallow: /sass/
+Disallow: /scss/
+Disallow: /styl/
+Disallow: /images/src/
+
+Sitemap: https://tiny-lending.web.app/stitemap.xml

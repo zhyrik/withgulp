@@ -1,0 +1,110 @@
+// IMPORT SECTION
+
+//@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+//@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+// @import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
+
+// USER VARIABLES SECTION
+
+$primary: #17A589 
+$white: #fafafa
+$grey: #999
+
+$darken: rgba(0,0,0, 0.7)
+$gradient : linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.9) 100%)
+
+$gap: 3rem
+
+$accent:     orange // Accent Color
+$fontsize:   16px // Body Font Size
+$textcolor:  #333 // Text Color
+$mainfamily: roboto, sans-serif // Main Font Family
+
+// Bootstrap compatible gutter variable => $gutter
+
+$grid-gutter-width: 20px
+$gutter: $grid-gutter-width
+
+// FONTS LOAD SECTION
+
+@mixin font($f-name, $f-style, $f-weight, $f-url)
+	@font-face
+		font-family: $f-name
+		font-style: $f-style
+		font-weight: $f-weight
+		src: url($f-url) format('woff2')
+
+@include font('roboto', normal, 400, '../fonts/roboto-regular-webfont.woff2')
+@include font('roboto', italic, 400, '../fonts/roboto-italic-webfont.woff2')
+@include font('roboto', normal, 700, '../fonts/roboto-bold-webfont.woff2')
+@include font('roboto', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2')
+
+// GENERAL DOCUMENT STYLES
+
+*,
+*::after,
+*::before
+	padding: 0
+	margin: 0
+	box-sizing: border-box
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+html
+	font-size: 10px
+body
+	font-size: $fontsize
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $mainfamily
+	overflow-x: hidden
+	color: $textcolor
+
+h1,h2,h3,h4,h5,h6
+	font-weight: 400
+	letter-spacing: 1px
+
+p
+	font-size: 1.4rem
+
+section
+	padding: 15vh 0
+
+.container
+	max-width: 1300px
+	padding: 0 5vw
+
+.flex-center
+	display: flex
+	justify-content: center
+	align-items: center
+
+.btn
+	text-transform: uppercase
+	padding: 0.5rem 2rem
+	border: 1px solid $white
+	cursor: pointer
+	transition: all 0.3s
+	&:hover
+		background: $primary
+		border-color: $primary
+
+.section-h2
+	font-size: 3rem
+	text-transform: capitalize
+.section-p
+	margin-bottom: 7vh
